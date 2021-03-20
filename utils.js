@@ -2,13 +2,13 @@ const jwt = require('jsonwebtoken');
 
 module.exports = {
   validateToken: (req, res, next) => {
+    // FIXME: Verify the jwt passed in the env at the end of the project...
     const authorizationHeaader = req.headers.authorization;
     let result;
     if (authorizationHeaader) {
       const token = req.headers.authorization.split(' ')[1]; // Bearer <token>
       const options = {
         expiresIn: '2d',
-        issuer: 'https://sco1tch.io'
       };
       try {
         // verify makes sure that the token hasn't expired and has been issued by us

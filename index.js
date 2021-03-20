@@ -35,11 +35,7 @@ if (environment !== 'production') {
     app.use('/', logger('dev'));
 }
 
-app.use('/api/v1', graphqlHTTP({
-    schema: schema,
-    rootValue: root,
-    graphiql: true,
-  }), routes(router));
+app.use('/api/v1', routes(router));
 
 app.listen(`${stage.port}`, () => {
     console.log(`Server now listening at localhost:${stage.port}`);

@@ -47,7 +47,8 @@ module.exports = {
                   status = 200;
                   // Create a token
                   const payload = { user: user.name };
-                  const options = { expiresIn: '2d', issuer: 'https://sco1tch.io' };
+                  // FIXME: Add issuer building the tokenized endpoint 
+                  const options = { expiresIn: '2d'};
                   const secret = process.env.JWT_SECRET;
                   const token = jwt.sign(payload, secret, options);
 
