@@ -13,6 +13,8 @@ const stage = require('./config')[environment];
 const routes = require('./routes/index.js');
 const typeDefs = require('./graphql/schema')
 const resolvers =require('./graphql/resolver')
+const rateLimiter = require('./middleware/');
+
 
 
 app.use(bodyParser.json());
