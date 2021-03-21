@@ -1,8 +1,9 @@
 const controller = require('../controllers/users');
 const validateToken = require('../utils').validateToken;
+const rateLimiter = require('./../middleware');
 
 module.exports = (router) => {
-  router.route('/users')
+  router.route('/users', rateLimiter)
     .post(controller.add)
     .get(validateToken, controller.getAll);
   
