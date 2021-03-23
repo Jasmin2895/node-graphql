@@ -8,5 +8,5 @@ module.exports = (router) => {
     .get(validateToken, controller.getAll);
   
   router.route('/login')
-    .post(rateLimiter,controller.login)
+    .post(rateLimiter, controller.login)
 };

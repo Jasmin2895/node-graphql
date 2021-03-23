@@ -13,6 +13,7 @@ const stage = require('./config')[environment];
 const routes = require('./routes/index.js');
 const typeDefs = require('./graphql/schema')
 const resolvers = require('./graphql/resolver')
+const cors = require('cors')
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -24,14 +25,19 @@ if (environment !== 'production') {
     app.use('/', logger('dev'));
 }
 
-app.use('/api/v1', routes(router));
+app.use(cors())
+app.options('*', cors());
+
+app.use('/api/v1',routes(router));
 
 //Mount a jwt or other authentication middleware that is run before the GraphQL execution
 // app.use(path, jwtCheck);
 
+
+
 const server = new ApolloServer({
     typeDefs,
-    resolvers,
+    resolvers
   })
 
 server.applyMiddleware({ app }); 
