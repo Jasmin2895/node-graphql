@@ -12,10 +12,7 @@ const environment = process.env.NODE_ENV;
 const stage = require('./config')[environment];
 const routes = require('./routes/index.js');
 const typeDefs = require('./graphql/schema')
-const resolvers =require('./graphql/resolver')
-const rateLimiter = require('./middleware/');
-
-
+const resolvers = require('./graphql/resolver')
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
