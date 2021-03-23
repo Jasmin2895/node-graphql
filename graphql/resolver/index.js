@@ -60,7 +60,7 @@ module.exports = {
             region,
             population,
             currencies,
-            exchangeRate: getExachangeRate(currencies[0].code)
+            exchangeRate: getExachangeRate(currencies[0].code),
           }))
         }catch(error) {
           throw error

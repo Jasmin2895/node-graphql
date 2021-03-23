@@ -8,6 +8,7 @@ module.exports = gql`
         population: Int
         currencies: [Currencies!]
         exchangeRate: Float
+        countrynNames: [String]
     }
     type Currencies {
         code: String
