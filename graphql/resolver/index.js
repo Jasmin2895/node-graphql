@@ -65,7 +65,6 @@ module.exports = {
         }catch(error) {
           throw error
         }
-        console.log("countries", countries)
       }      
     }
   }
