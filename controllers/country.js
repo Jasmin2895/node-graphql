@@ -6,6 +6,7 @@ const connUri = process.env.MONGO_LOCAL_CONN_URL;
 module.exports = {
     addCountries: (req, res)=> {
         const {name, population, currency, exchangeRate} = req.body;
+        console.log("name, population, currency, exchangeRate", name, population, currency, exchangeRate)
         mongoose.connect(connUri, { useNewUrlParser : true }, (err) => {
             let result = {};
             let status = 201;
