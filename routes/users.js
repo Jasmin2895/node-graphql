@@ -4,14 +4,15 @@ const rateLimiter = require('./../middleware');
 const countryController = require('../controllers/country');
 
 module.exports = (router) => {
-  router.route('/users')
-    .post(userController.add)
-    .get(validateToken, userController.getAll);
-  
-  router.route('/login')
-    .post(rateLimiter, userController.login)
+    router
+        .route('/users')
+        .post(userController.add)
+        .get(validateToken, userController.getAll);
 
-  router.route('/countryDetails')
-    .post(countryController.addCountries)
-    .get(countryController.getAllSavedCountries)
+    router.route('/login').post(rateLimiter, userController.login);
+
+    router
+        .route('/countryDetails')
+        .post(validateToken, countryController.addCountries)
+        .get(validateToken, countryController.getAllSavedCountries);
 };
