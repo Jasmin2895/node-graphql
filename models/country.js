@@ -4,23 +4,24 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const countrySchema = new Schema({
-  name: {
-    type: 'String',
-    required: true, 
-    trim: true
-  },
-  population: {
-    type: 'Number',
-    required: true
-  },
-  currency: {
-      type: "String",
-      required: true
-  },
-  exchangeRate: {
-      type: "Number",
-      required: true
-  }
+    name: {
+        type: 'String',
+        required: true,
+        trim: true,
+        unique: true,
+    },
+    population: {
+        type: 'Number',
+        required: true,
+    },
+    currency: {
+        type: 'String',
+        required: true,
+    },
+    exchangeRate: {
+        type: 'Number',
+        required: true,
+    },
 });
 
 // country before save

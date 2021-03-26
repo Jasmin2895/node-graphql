@@ -19,7 +19,7 @@ module.exports = {
                 if (data && data.rates) {
                     currencyList = Object.keys(data.rates);
                 }
-                const getExachangeRate = (countryCurrency) => {
+                const getExchangeRate = (countryCurrency) => {
                     if (currencyList.indexOf(countryCurrency) > -1) {
                         return data.rates[countryCurrency];
                     } else {
@@ -39,7 +39,7 @@ module.exports = {
                         region,
                         population,
                         currencies,
-                        exchangeRate: getExachangeRate(
+                        exchangeRate: getExchangeRate(
                             currencies[0].code,
                         ),
                     }),
