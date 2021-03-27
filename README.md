@@ -1,2 +1,2 @@
-# AnyfinTechnicalAssignment
-Anyfin Technical Assignment
+# node-graphql
+
